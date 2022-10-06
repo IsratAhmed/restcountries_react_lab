@@ -1,18 +1,13 @@
 import CountryListItem from "./CountryListItem";
 
-const VisitedCountriesList = () => {
-
-    //const [isFiltered, setIsFiltered] = useState(true);
-
-    //const handleOnChange = () => {
-    //    setIsFiltered(isChecked);
-    //};
-
+const VisitedCountriesList = ({visitedCountries, selectCountry}) => {
+    const visitedCountryListItems = visitedCountries.map((country) => {
+        return <CountryListItem country={country} selectCountry={selectCountry}/>
+    })
     return(
-        <>
-            <h2>All the countries I've visited!</h2>
-            <CountryListItem />
-        </>
+        <ul>
+            {visitedCountryListItems}
+        </ul>
     );
 }
 

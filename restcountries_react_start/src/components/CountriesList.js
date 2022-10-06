@@ -1,17 +1,18 @@
 import CountryListItem from "./CountryListItem";
 
-const CountriesList = ({countries}) => {
+const CountriesList = ({countries, selectCountry}) => {
+
+    const countryListItems = countries.map((country)=>{
+        return <CountryListItem 
+                    country={country} 
+                    selectCountry={selectCountry}
+                />
+    })
+
     return(
-        <>
-            <h2>Countries List here!</h2>
-            <h3>Tick if you have visited them</h3>
-            {countries.map((country, index)=> {
-              return <CountryListItem key={index} countryName = {country}/>
-            
-            }) 
-            }
-            
-        </>
+        <ul>
+            {countryListItems}
+        </ul>
     );
 }
 

@@ -1,17 +1,11 @@
-import { useState } from "react";
-const CountryListItem = ({countryName}) => {
+const CountryListItem = ({country, selectCountry}) => {
 
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleOnChange = () => {
-        console.log("The box was checked");
-        setIsChecked(!isChecked);
-    };
+    const handleClick = () => {
+        selectCountry(country);
+    }
 
     return (
-        <>
-        <li>{countryName} <input type="checkbox" checked={isChecked} onChange={handleOnChange}/> </li>
-        </>  
+        <li onClick={handleClick}>{country.name.common} - {country.flag}</li>
     );
 }
 

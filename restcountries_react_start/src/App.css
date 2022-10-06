@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+#main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+h1 {
+  text-align: center;
+}
+
+#country-detail {
+  text-align: left;
+}
+
+#country-detail ul li {
+  list-style: none;
+}
